@@ -64,3 +64,12 @@ from googletrans import Translator
 translator = Translator() 
 textTraslate= translator.translate(summary, src='en', dest='es')
 print(textTraslate.text)
+
+from gtts import gTTS
+
+import os
+mytext = text
+languaje = 'en'
+myobj = gTTS (text=mytext, lang=languaje, slow=False)
+myobj.save("nissan.mp3")
+os.system("nissan.mp3")
