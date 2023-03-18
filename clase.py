@@ -4,7 +4,7 @@ import nltk
 from inscriptis import get_text
 
 #Scrapea articulo de wikipedia
-text = "The Nissan Skyline GT-R (Japanese: 日産・スカイラインGT-R, Hepburn: Nissan Sukairain GT-R) is a sports car based on the Nissan Skyline range. The first cars named Skyline GT-Rwere produced between 1969 and 1972 under the model code KPGC10, and were successful in Japanese touring car racing events. This model was followed by a brief production run of second-generation cars, under model code KPGC110, in 1973.After a 16-year hiatus, the GT-R name was revived in 1989 as the BNR32 (R34) Skyline GT-R. Group A specification versions of the R32 GT-R were used to win the Japanese Touring Car Championship for four years in a row. The R32 GT-R also had success in the Australian Touring Car Championship, with Jim Richards using it to win the championship in 1991 and Mark Skaife doing the same in 1992, until a regulation change excluded the GT-R in 1993. The technology and performance of the R32 GT-R"
+text = "The world economy or global economy is the economy of all humans of the world, referring to the global economic system, which includes all economic activities which are conducted both within and between nations, including production, consumption, economic management, work in general, exchange of financial values and trade of goods and services"
 #html = urllib.request.urlopen(text).read().decode('utf8')
 #text = get_text(html)
 article_text = text.replace("[ edit ]", "")
@@ -65,11 +65,15 @@ translator = Translator()
 textTraslate= translator.translate(summary, src='en', dest='es')
 print(textTraslate.text)
 
+
+
+
 from gtts import gTTS
 
 import os
-mytext = text
-languaje = 'en'
-myobj = gTTS (text=mytext, lang=languaje, slow=False)
-myobj.save("nissan.mp3")
-os.system("nissan.mp3")
+mytext = textTraslate.text
+languaje = 'es'
+myobj = gTTS (text= textTraslate.text, lang=languaje, slow=False)
+myobj.save("word.mp3")
+os.system("word.mp3")
+
